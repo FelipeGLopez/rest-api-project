@@ -1,5 +1,6 @@
-from ..models.factory import Factory
 from rest_framework import serializers
+
+from ..models.factory import Factory
 
 
 class FactorySerializer(serializers.ModelSerializer):
