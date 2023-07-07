@@ -1,32 +1,21 @@
-from django.core.management.base import BaseCommand, CommandError
-from models.factory import Factory
-from models.sprocket import Sprocket
-from models.sprocket_production import SprocketProduction
-from django.db import transaction
 from datetime import datetime, timezone
+
+from django.core.management.base import BaseCommand, CommandError
+from django.db import transaction
+
+from sprockets.models.factory import Factory
+from sprockets.models.sprocket import Sprocket
+from sprockets.models.sprocket_production import SprocketProduction
+from sprockets.utils.read_fixtures import read_fixtures
 
 
 class Command(BaseCommand):
     help = "Creates Factory, Sprocket and SprocketProduction instances from json files in fixtures folder."
 
-    def _read_from_json(self, file_name):
-        """
-        Reads json file from fixtures folder and returns a dictionary
-        """
-
-        import json
-        from pathlib import Path
-
-        file_path = (
-            Path(__file__).resolve().parent.parent.parent / "fixtures" / file_name
-        )
-        with open(file_path, "r") as json_file:
-            return json.load(json_file)
-
     def handle(self, *args, **options):
         try:
-            seed_factory_data = self._read_from_json("seed_factory_data.json")
-            seed_sprocket_types = self._read_from_json("seed_sprocket_types.json")
+            seed_factory_data = read_fixtures("seed_factory_data.json")
+            seed_sprocket_types = read_fixtures("seed_sprocket_types.json")
             with transaction.atomic():
                 for index, sprocket in enumerate(seed_sprocket_types["sprockets"]):
                     sprocket_obj = Sprocket.objects.create(
