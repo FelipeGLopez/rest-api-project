@@ -1,6 +1,6 @@
 from .generics import RetrieveViewSet
 from sprockets.models import Factory
-from sprockets.serializers import FactorySerializer
+from serializers.factory_serializer import FactorySerializer
 
 
 class FactoryViewSet(RetrieveViewSet):

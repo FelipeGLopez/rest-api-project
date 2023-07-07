@@ -1,6 +1,6 @@
 from .generics import CreateUpdateRetrieveViewSet
 from sprockets.models import Sprocket
-from sprockets.serializers import SprocketSerializer
+from serializers.sprocket_serializer import SprocketSerializer
 
 
 class SprocketsViewSet(CreateUpdateRetrieveViewSet):
