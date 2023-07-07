@@ -1,6 +1,6 @@
 from .generics import RetrieveViewSet
 from ..models.sprocket_production import SprocketProduction
-from serializers.sprocket_production_serializer import SprocketProductionSerializer
+from ..serializers.sprocket_production_serializer import SprocketProductionSerializer
 
 
 class SprocketProductionViewSet(RetrieveViewSet):
