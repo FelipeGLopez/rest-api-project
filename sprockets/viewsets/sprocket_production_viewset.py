@@ -1,10 +1,11 @@
 from sprockets.models.sprocket_production import SprocketProduction
-from sprockets.serializers.sprocket_production_serializer import \
-    SprocketProductionSerializer
+from sprockets.serializers.sprocket_production_serializer import (
+    SprocketProductionSerializer,
+)
 
-from .generics import RetrieveViewSet
+from .generics import ListViewSet
 
 
-class SprocketProductionViewSet(RetrieveViewSet):
+class SprocketProductionViewSet(ListViewSet):
     queryset = SprocketProduction.objects.all()
     serializer_class = SprocketProductionSerializer

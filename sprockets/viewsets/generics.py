@@ -15,3 +15,10 @@ class RetrieveViewSet(
     viewsets.GenericViewSet,
 ):
     pass
+
+
+class ListViewSet(
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
+    pass
