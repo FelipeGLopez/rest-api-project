@@ -15,7 +15,9 @@ class Command(BaseCommand):
         import json
         from pathlib import Path
 
-        file_path = Path(__file__).resolve().parent.parent.parent / "fixtures" / file_name
+        file_path = (
+            Path(__file__).resolve().parent.parent.parent / "fixtures" / file_name
+        )
         with open(file_path, "r") as json_file:
             return json.load(json_file)
 
@@ -42,9 +44,7 @@ class Command(BaseCommand):
                             actual=chart_data["sprocket_production_actual"][
                                 chart_index
                             ],
-                            goal=chart_data["sprocket_production_goal"][
-                                chart_index
-                            ],
+                            goal=chart_data["sprocket_production_goal"][chart_index],
                             datetime_produced=datetime.fromtimestamp(
                                 int(chart_data["time"][chart_index]),
                                 timezone.utc,

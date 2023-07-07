@@ -13,6 +13,7 @@ class SprocketSerializer(serializers.ModelSerializer):
         model = Sprocket
         fields = ("id", "outside_diameter", "pitch_diameter", "pitch", "teeth")
 
+
 class SprocketProductionSerializer(serializers.ModelSerializer):
     class Meta:
         model = SprocketProduction
