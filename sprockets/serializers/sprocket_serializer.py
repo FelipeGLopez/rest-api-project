@@ -1,5 +1,5 @@
+from models.sprocket import Sprocket
 from rest_framework import serializers
-from models import Sprocket
 
 
 class SprocketSerializer(serializers.ModelSerializer):
