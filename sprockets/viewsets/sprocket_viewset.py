@@ -1,5 +1,5 @@
 from .generics import CreateUpdateRetrieveViewSet
-from sprockets.models import Sprocket
+from models.sprocket import Sprocket
 from serializers.sprocket_serializer import SprocketSerializer
 
 

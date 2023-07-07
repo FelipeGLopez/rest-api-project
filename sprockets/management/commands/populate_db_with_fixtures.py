@@ -1,5 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
-from sprockets.models import Factory, Sprocket, SprocketProduction
+from models.factory import Factory
+from models.sprocket import Sprocket
+from models.sprocket_production import SprocketProduction
 from django.db import transaction
 from datetime import datetime, timezone
 
