@@ -1,5 +1,5 @@
 from .generics import RetrieveViewSet
-from models.factory import Factory
+from ..models.factory import Factory
 from serializers.factory_serializer import FactorySerializer
 
 
