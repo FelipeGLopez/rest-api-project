@@ -1,4 +1,4 @@
-from models.factory import Factory
+from ..models.factory import Factory
 from rest_framework import serializers
 
 

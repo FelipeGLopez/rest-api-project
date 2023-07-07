@@ -1,4 +1,4 @@
-from models.sprocket import Sprocket
+from ..models.sprocket import Sprocket
 from rest_framework import serializers
 
 
