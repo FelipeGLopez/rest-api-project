@@ -1,4 +1,6 @@
-from .views import SprocketsViewSet, FactoryViewSet, SprocketProductionViewSet
+from .viewsets.factory_viewset import FactoryViewSet
+from .viewsets.sprocket_viewset import SprocketsViewSet
+from .viewsets.sprocket_production_viewset import SprocketProductionViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
