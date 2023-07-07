@@ -1,5 +1,6 @@
-from ..models.sprocket import Sprocket
-from ..serializers.sprocket_serializer import SprocketSerializer
+from sprockets.models.sprocket import Sprocket
+from sprockets.serializers.sprocket_serializer import SprocketSerializer
+
 from .generics import CreateUpdateRetrieveViewSet
 
 

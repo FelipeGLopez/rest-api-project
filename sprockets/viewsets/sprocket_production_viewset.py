@@ -1,6 +1,7 @@
-from ..models.sprocket_production import SprocketProduction
-from ..serializers.sprocket_production_serializer import \
+from sprockets.models.sprocket_production import SprocketProduction
+from sprockets.serializers.sprocket_production_serializer import \
     SprocketProductionSerializer
+
 from .generics import RetrieveViewSet
 
 

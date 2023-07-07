@@ -1,5 +1,6 @@
-from ..models.factory import Factory
-from ..serializers.factory_serializer import FactorySerializer
+from sprockets.models.factory import Factory
+from sprockets.serializers.factory_serializer import FactorySerializer
+
 from .generics import RetrieveViewSet
 
 
