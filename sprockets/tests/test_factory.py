@@ -2,14 +2,12 @@ import pytest
 from rest_framework import status
 
 from sprockets.models.factory import Factory
+from sprockets.tests.factories.factory import FactoryFactory
 
 
-@pytest.mark.django_db(transaction=True)
+@pytest.mark.django_db
 def test_get_factory_then_success(api_client):
-    factory_object = Factory.objects.create(
-        id=13,
-        name="Test Factory 1",
-    )
+    factory_object = FactoryFactory()
     response = api_client.get(f"/factories/{factory_object.id}/", format="json")
     assert response.status_code == status.HTTP_200_OK
     assert response.data["name"] == factory_object.name
