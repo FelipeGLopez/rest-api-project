@@ -14,6 +14,8 @@ standup_db:
 	docker volume rm -f rest-api-project_postgres_data
 	docker-compose build db
 	docker-compose up db -d
+
+migrate_and_preload:
 	make migrations preload_data
 	
 standup_app:
@@ -23,4 +25,7 @@ standup_app:
 	docker-compose up web -d
 
 setup_project:
-	make standup_db standup_app migrations preload_data
+	make standup_db standup_app migrate_and_preload
+
+make open_swagger:
+	open http://localhost:8000/swagger/

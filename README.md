@@ -14,3 +14,7 @@ This project was built on top of Django 4.2+ and Python 3.11+
 ## Running tests :white_check_mark:
 
 1. To run tests, simply execute `make run_tests`.
+
+## Try it! :rocket:
+
+If you want to play with the endpoints by yourself, head to http://localhost:8000/swagger/ or type `make open_swagger` after running the project.
