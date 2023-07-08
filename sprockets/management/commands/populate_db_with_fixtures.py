@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.db import transaction
 
 from sprockets.models.factory import Factory
@@ -51,4 +51,4 @@ class Command(BaseCommand):
             self.stdout.write(
                 self.style.ERROR("Error while populating database: %s" % e)
             )
-            raise CommandError("Error populating database: %s" % e)
+            raise e
